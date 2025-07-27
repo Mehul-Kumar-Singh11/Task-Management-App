@@ -7,6 +7,13 @@ services:
     volumes:
       - mongo_data:/data/db
 
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports: 
+      - "5672:5672"
+      - "15672:15672"   # Web UI
+
   user-service:
     build: ./user-service
     container_name: user-service
@@ -22,6 +29,16 @@ services:
       - "3002:3002"
     depends_on:
       - mongo
+      - rabbitmq
+
+  notification-service:
+    build: ./notification-service
+    container_name: notification-service
+    ports:
+      - "3003:3003"
+    depends_on:
+      - mongo
+      - rabbitmq
 
 
 volumes:
