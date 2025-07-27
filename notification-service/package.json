@@ -1,10 +1,9 @@
 {
-  "name": "task-service",
+  "name": "notification-service",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Mehul Singh",
@@ -15,8 +14,5 @@
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
     "mongoose": "^8.16.5"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
   }
 }
